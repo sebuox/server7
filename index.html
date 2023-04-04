@@ -26,8 +26,38 @@ opacity: .6;
      display: inline-block;
    }
 </style>
-   
-<!-- start sw-rss-feed code --> 
+   <script>
+        (function(d, s, id) {
+            if (d.getElementById(id)) {
+                if (window.__TOMORROW__) {
+                    window.__TOMORROW__.renderWidget();
+                }
+                return;
+            }
+            const fjs = d.getElementsByTagName(s)[0];
+            const js = d.createElement(s);
+            js.id = id;
+            js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        })(document, 'script', 'tomorrow-sdk');
+        </script>
+        <div class="tomorrow"
+           data-location-id=""
+           data-language="EN"
+           data-unit-system="METRIC"
+           data-skin="dark"
+           data-widget-type="upcoming"
+           style="padding-bottom:22px;position:relative;">
+          <a
+            href="https://www.tomorrow.io/weather-api/"
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;">
+            
+                        </a>
+
+              </div>    
+ <!-- start sw-rss-feed code --> 
 <script type="text/javascript"> 
 <!-- 
 rssfeed_url = new Array(); 
@@ -71,41 +101,7 @@ rssfeed_cache = "3cb42722ef6c0f97eb69e28c6e8fd9f8";
 <script type="text/javascript" src="//feed.surfing-waves.com/js/rss-feed.js"></script> 
 <!-- The link below helps keep this service FREE, and helps other people find the SW widget. Please be cool and keep it! Thanks. --> 
 <div style="color:#ccc;font-size:10px; text-align:right; width:230px;">powered by <a href="https://surfing-waves.com" rel="noopener" target="_blank" style="color:#ccc;">Surfing Waves</a></div> 
-<!-- end sw-rss-feed code -->
- 
-    
-    <script>
-        (function(d, s, id) {
-            if (d.getElementById(id)) {
-                if (window.__TOMORROW__) {
-                    window.__TOMORROW__.renderWidget();
-                }
-                return;
-            }
-            const fjs = d.getElementsByTagName(s)[0];
-            const js = d.createElement(s);
-            js.id = id;
-            js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        })(document, 'script', 'tomorrow-sdk');
-        </script>
-        <div class="tomorrow"
-           data-location-id=""
-           data-language="EN"
-           data-unit-system="METRIC"
-           data-skin="dark"
-           data-widget-type="upcoming"
-           style="padding-bottom:22px;position:relative;">
-          <a
-            href="https://www.tomorrow.io/weather-api/"
-            rel="nofollow noopener noreferrer"
-            target="_blank"
-            style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;">
-            
-                        </a>
-
-              </div>    
-    
+<!-- end sw-rss-feed code -->    
     
                                                                                                                                       
                                                                                                                                       
