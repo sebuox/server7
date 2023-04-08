@@ -105,7 +105,34 @@ rssfeed_cache = "5eb6059eeb928cdb867cbc365c2200ee";
 <h1 style="color:white;">Find yaself down below &#8681;</h1><i style="font-size:24px;"></i> 
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d69091423.11906475!2d17.997694798931175!3d32.3630203240671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2suk!4v1680887849437!5m2!1sen!2suk" width="600" height="460" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 <script src="https://minnit.chat/js/embed.js" defer></script><minnit-chat data-chatname="https://organizations.minnit.chat/243791466832078/Main?embed&nickname=" data-style="width:430px;height:460px;"></minnit-chat><style>
-   div
+   
+  <body>
+      
+      <form id="myForm">
+         name: <input id="userName" type="text" name="fname">
+         <br><br>
+        
+         <br><br>
+         <textarea id ="userComment" rows="4" cols="50" name="comment"> Enter comment here...</textarea>
+         <br><br>
+         <input type="button" onclick="myFunction()" value="Submit">
+      </form>
+      <h5>Submitted data :</h5>
+      <p id="data"></p>
+      <script>
+         function myFunction(){
+          let data = "";  let name = document.getElementById("userName").value
+          
+          let comment = document.getElementById("userComment").value
+         
+         data = "User name : "+name+"<br/>User comment : "+comment
+         
+         document.getElementById("data").innerHTML = data  // display data to paragraph
+         }
+      </script>
+   </body>
+  
+  div
    {
      display: inline-block;
    }
