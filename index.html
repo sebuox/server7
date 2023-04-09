@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <link rel="icon" type="image/png" href="music-player.png"
 <html>
@@ -118,31 +119,45 @@ rssfeed_cache = "5eb6059eeb928cdb867cbc365c2200ee";
   
 </style>
  <br><br>
- <body>
- <form id="myForm">
-         name: <input id="userName" type="text" name="fname">
-         <br><br>
-        
-         <br><br>
-         <textarea id ="userComment" rows="4" cols="50" name="comment"> Enter comment here...</textarea>
-         <br><br>
-         <input type="button" onclick="myFunction()" value="Submit">
-      </form>
-      <h5>Posts :</h5>
-      <p id="data"></p>
-      <script>
-         function myFunction(){
-          let data = "";  let name = document.getElementById("userName").value
-          
-          let comment = document.getElementById("userComment").value
-         
-         data = "User name : "+name+"<br/>User comment : "+comment
-         
-         document.getElementById("data").innerHTML = data  // display data to paragraph
-         }
-      </script>
-      </body>  
-<br>
+ <style type="text/css">
+    h2 {
+        text-align: center;
+        font-size: 50px;
+    }
+    img#getImage {
+        width: 300px;
+        height: auto;
+        border: 4px solid #a1a1a1;
+    }
+    div {
+    text-align: center;
+    }
+</style>
+</head>
+<body>
+    <div>
+       
+        <img src="image1.jpg" id="getImage">
+    </div>
+    <div>
+        <input type="button" onclick="imagefun()" value="Click">
+    </div>
+    <script>
+        function imagefun() {
+            var Image_Id = document.getElementById('getImage');
+            if (Image_Id.src.match("coperfild1.png")) {
+                Image_Id.src = "coperfild2.png";
+            }
+            else {
+                Image_Id.src = "coperfild3.png";
+            }
+        }
+    </script>
+</body>
+ 
+ 
+ 
+ 
 <body>
    <h1 style="color:white;">Music &#9835;</h1>
   <iframe width="560" height="352" src="https://www.youtube.com/embed/videoseries?list=PL4royKB7U7zcHWw1orMKO5l6jtZXRAuhJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
@@ -167,3 +182,5 @@ body {
      crossorigin="anonymous"></script>
   </head>
   </html>
+
+
