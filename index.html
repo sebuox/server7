@@ -135,24 +135,16 @@ rssfeed_cache = "5eb6059eeb928cdb867cbc365c2200ee";
 </style>
 </head>
 
-<body>
-        <img id="Click" src="coperfild1.png" />
-        <script type="text/javascript">
-            var images = ['coperfild1.png', 'coperfild2.png', 'coperfild3.png'],
-                i = 1;
+<img alt="" src="coperfild1.png" style="height: 85px; width: 198px" id="imgClickAndChange" onclick="changeImage()"   />
 
-            // preload
-            for (var j=images.length; j--;) {
-                var img = new Image();
-                img.src = images[j];
-            }
+   <script language="javascript">
+        var counter = 1;
+        function changeImage() {
+            counter > 3 ? counter = 1 : counter++; 
+            document.getElementById("imgClickAndChange").src = "assets/img"+counter+".png";
+        }
 
-            // event handler
-            document.getElementById('myButton').addEventListener('click', function() {
-                this.src = images[i >= images.length - 1 ? i = 0 : ++i];
-            }, false);
-        </script>
-    </body>
+    </script>
 
  
  
