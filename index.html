@@ -135,16 +135,29 @@ rssfeed_cache = "5eb6059eeb928cdb867cbc365c2200ee";
 </style>
 </head>
 
-<img alt="" src="coperfild1.png" style="height: auto; width: 560px" id="imgClickAndChange" onclick="changeImage()"   />
+<p>
+    <img alt="" src="coperfild1.png" 
+        style="height: 650px; width: auto" id="imgClickAndChange" onclick="changeImage()"   />
+ 
+ 
+<body>
+<script language="javascript">
+function changeImage() {
 
-   <script language="javascript">
-        var counter = 1;
-        function changeImage() {
-            counter > 3 ? counter = 1 : counter++; 
-            document.getElementById("imgClickAndChange").src = ""+counter+".png";
-        }
+    if (document.getElementById("imgClickAndChange").src == "coperfild1.png") 
+    {
+        document.getElementById("imgClickAndChange").src = "coperfild2.png";
 
-    </script>
+    }
+    else if (document.getElementById("imgClickAndChange").src == "coperfild2.png")
+    {
+        document.getElementById("imgClickAndChange").src = "coperfild3.png";
+
+    }
+    else if(document.getElementById("imgClickAndChange").src == "coperfild3.png"){
+    document.getElementById("imgClickAndChange").src = "coperfild1.png"
+
+    }
 
  
  
