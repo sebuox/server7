@@ -134,26 +134,32 @@ rssfeed_cache = "5eb6059eeb928cdb867cbc365c2200ee";
     }
 </style>
 </head>
-<body>
-    <div>
-       
-        <img src="coperfild1.png" id="getImage">
-    </div>
-    <div>
-        <input type="button" onclick="imagefun()" value="Click">
-    </div>
-    <script>
-        function imagefun() {
-            var Image_Id = document.getElementById('getImage');
-            if (Image_Id.src.match("coperfild2.png")) {
-                Image_Id.src = "coperfild3.png";
-            }
-            else {
-                Image_Id.src = "coperfild1.png";
-            }
-        }
-    </script>
-</body>
+
+
+<head> 
+<script> 
+
+var imagesNames = ["coperfild1.png", "coperfild2.png", "coperfild3.png"];
+
+function preloadImages() { 
+  for (var i = 0 ; i < imagesNames.length; i++) {
+    var img = new Image();
+    img.src = imageNames[i];
+  }
+} 
+
+var imageIndex = 0;
+img.onclick = function() {
+  imageIndex++;
+  if (imageIndex > imagesNames.length) {
+    imageIndex = 0;
+  }
+
+  document.getElementById("myButton").src = imageNames[imageIndex];
+}
+
+</script> 
+</head> 
  
  
  
