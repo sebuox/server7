@@ -135,13 +135,13 @@ rssfeed_cache = "5eb6059eeb928cdb867cbc365c2200ee";
 </style>
 </head>
 
-<img alt="" src="coperfild1.png" style="height: 85px; width: 198px" id="imgClickAndChange" onclick="changeImage()"   />
+<img alt="" src="coperfild1.png" style="height: auto; width: 560px" id="imgClickAndChange" onclick="changeImage()"   />
 
    <script language="javascript">
         var counter = 1;
         function changeImage() {
             counter > 3 ? counter = 1 : counter++; 
-            document.getElementById("imgClickAndChange").src = "assets/img"+counter+".png";
+            document.getElementById("imgClickAndChange").src = ""+counter+".png";
         }
 
     </script>
