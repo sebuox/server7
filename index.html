@@ -135,29 +135,40 @@ rssfeed_cache = "5eb6059eeb928cdb867cbc365c2200ee";
 </style>
 </head>
 
-<p>
-    <img alt="" src="coperfild1.png" 
-        style="height: 650px; width: auto" id="imgClickAndChange" onclick="changeImage()"   />
- 
- 
-<body>
-<script language="javascript">
-function changeImage() {
+  <body>
+    <div id="player">
+    </div>
 
-    if (document.getElementById("imgClickAndChange").src == "coperfild1.png") 
-    {
-        document.getElementById("imgClickAndChange").src = "coperfild2.png";
+    <script>
+      class ClickListener {
+        constructor() {
+          this.rootElement = document.querySelector( "#player" );
+          this.element = document.createElement("img");
+          this.rootElement.appendChild(this.element);
+          this.images = ['coperfild1.png', './coperfild2.png', 'coperfild3.png']
+          this.idx = 0
+          this.init()
+        }
 
-    }
-    else if (document.getElementById("imgClickAndChange").src == "coperfild2.png")
-    {
-        document.getElementById("imgClickAndChange").src = "coperfild3.png";
+        init() {
+          this.element.src = this.images[this.idx]
+          this.element.style.width = `400px`;
+          this.element.style.height = `400px`;
+          this.element.onclick = this.nextImage.bind(this)
+        }
 
-    }
-    else if(document.getElementById("imgClickAndChange").src == "coperfild3.png"){
-    document.getElementById("imgClickAndChange").src = "coperfild1.png"
+        nextImage() {
+          this.idx++;
+          if(this.idx >= this.images.length) {
+            this.idx = 0;
+          }
+          this.element.src = this.images[this.idx]
+        }
 
-    }
+      }
+      new ClickListener()
+    </script>
+  </body>
 
  
  
