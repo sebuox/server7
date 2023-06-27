@@ -120,10 +120,6 @@
       background-color: #45a049;
     }
 
-    .forumPosts {
-      margin-top: 20px;
-    }
-
     .forumPost {
       background-color: #fff;
       padding: 10px;
@@ -230,7 +226,6 @@
   <div class="modeSwitch">
     <label for="darkModeToggle">Tamni način</label>
     <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
-    <button onclick="toggleLanguage()">Switch to English</button>
   </div>
 
   <div class="container forumBox">
@@ -286,7 +281,7 @@
       const link = document.createElement('a');
       link.href = searchUrl;
       link.target = '_blank';
-      link.textContent = 'Search on ' + engineName;
+      link.textContent = 'Pretraži na ' + engineName;
       link.classList.add('searchLink');
       return link;
     }
@@ -302,6 +297,7 @@
 
       const currentTime = new Date().toLocaleString();
       const postDiv = createPostElement(comment, currentTime);
+      const forumPostsDiv = document.getElementById('forumPosts');
       forumPostsDiv.appendChild(postDiv);
 
       saveComment(comment, currentTime);
@@ -341,28 +337,6 @@
 
       body.classList.toggle('darkMode');
       container.classList.toggle('darkMode');
-    }
-    
-    function toggleLanguage() {
-      const switchButton = document.querySelector('button');
-      
-      if (switchButton.textContent === 'Switch to English') {
-        switchButton.textContent = 'Prebaci na hrvatski';
-        document.querySelector('h1').textContent = 'Search for Cheap Products';
-        document.getElementById('searchInput').placeholder = 'Enter product name';
-        document.querySelector('.commentInput').placeholder = 'Write your comment';
-        document.querySelector('.forumTitle').textContent = 'Forum';
-        document.querySelector('.forumContent').textContent = 'This is a forum where users can discuss and share information about cheap products. Feel free to ask questions or contribute to the discussions.';
-        document.querySelector('.commentSubmit').value = 'Submit';
-      } else {
-        switchButton.textContent = 'Switch to English';
-        document.querySelector('h1').textContent = 'Potražite povoljne proizvode';
-        document.getElementById('searchInput').placeholder = 'Unesite naziv proizvoda';
-        document.querySelector('.commentInput').placeholder = 'Napišite svoj komentar';
-        document.querySelector('.forumTitle').textContent = 'Forum';
-        document.querySelector('.forumContent').textContent = 'Ovo je forum gdje korisnici mogu raspravljati i dijeliti informacije o jeftinim proizvodima. Slobodno postavite pitanja ili doprinesite raspravama.';
-        document.querySelector('.commentSubmit').value = 'Objavi';
-      }
     }
   </script>
 </body>
