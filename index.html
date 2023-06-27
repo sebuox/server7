@@ -9,6 +9,8 @@
       background-color: #f7f7f7;
       color: #333;
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
     .container {
@@ -40,7 +42,6 @@
       border-radius: 4px 0 0 4px;
       background-color: #f2f2f2;
       color: #333;
-      width: 70%;
     }
 
     .searchForm input[type="submit"] {
@@ -51,7 +52,6 @@
       border: none;
       border-radius: 0 4px 4px 0;
       cursor: pointer;
-      width: 30%;
     }
 
     .searchResults {
@@ -120,24 +120,6 @@
       background-color: #45a049;
     }
 
-    .forumPost {
-      background-color: #fff;
-      padding: 10px;
-      border-radius: 4px;
-      margin-bottom: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .forumPostContent {
-      font-size: 14px;
-      margin-bottom: 5px;
-    }
-
-    .forumPostTime {
-      font-size: 12px;
-      color: #999;
-    }
-
     .modeSwitch {
       text-align: center;
       margin-top: 20px;
@@ -154,44 +136,45 @@
       color: #fff;
     }
 
-    .darkMode h1,
-    .darkMode .forumTitle {
+    .darkMode h1 {
       color: #fff;
     }
 
-    .darkMode .searchForm input[type="text"],
-    .darkMode .commentInput {
+    .darkMode .searchForm input[type="text"] {
       background-color: #444;
       color: #fff;
     }
 
-    .darkMode .searchForm input[type="submit"],
-    .darkMode .commentSubmit {
+    .darkMode .searchForm input[type="submit"] {
       background-color: #4CAF50;
       color: #fff;
     }
 
-    .darkMode .searchLink,
-    .darkMode .forumPost {
-      background-color: #555;
+    .darkMode .searchLink {
+      background-color: #444;
       color: #fff;
     }
 
     .darkMode .searchLink:hover {
-      background-color: #666;
+      background-color: #555;
     }
 
     .darkMode .forumBox {
       background-color: #555;
     }
 
-    .darkMode .forumContent,
-    .darkMode .forumPostContent,
-    .darkMode .forumPostTime {
+    .darkMode .forumTitle,
+    .darkMode .forumContent {
       color: #fff;
     }
 
+    /* Responsive Styles */
     @media only screen and (max-width: 480px) {
+      .container {
+        padding: 20px;
+        border-radius: 0;
+      }
+
       h1 {
         font-size: 24px;
       }
@@ -200,63 +183,67 @@
         flex-direction: column;
       }
 
-      .searchForm input[type="text"] {
-        width: 100%;
-        border-radius: 4px;
-        margin-bottom: 10px;
-      }
-
+      .searchForm input[type="text"],
       .searchForm input[type="submit"] {
         width: 100%;
-        border-radius: 4px;
+      }
+
+      .searchResults {
+        margin-top: 10px;
+      }
+
+      .forumBox {
+        padding: 10px;
+        margin-top: 10px;
+      }
+
+      .forumTitle {
+        font-size: 20px;
+      }
+
+      .forumContent {
+        font-size: 14px;
+      }
+
+      .commentForm {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .commentInput,
+      .commentSubmit {
+        width: 100%;
+        margin-top: 10px;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Potražite povoljne proizvode</h1>
+    <h1 style="font-family: 'Poppins', sans-serif;">Potražite povoljne proizvode</h1>
     <form onsubmit="performSearch(event)" class="searchForm">
       <input type="text" id="searchInput" placeholder="Unesite naziv proizvoda">
       <input type="submit" value="Pretraži">
     </form>
     <div id="searchResults" class="searchResults"></div>
-  </div>
 
-  <div class="modeSwitch">
-    <label for="darkModeToggle">Tamni način</label>
-    <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
-  </div>
+    <div class="forumBox">
+      <h2 class="forumTitle">Forum</h2>
+      <p class="forumContent">This is the forum section where users can discuss and share information about cheap products. Feel free to ask questions or contribute to the discussions.</p>
 
-  <div class="container forumBox">
-    <h2 class="forumTitle">Forum</h2>
-    <p class="forumContent">Ovo je forum gdje korisnici mogu raspravljati i dijeliti informacije o jeftinim proizvodima. Slobodno postavite pitanja ili doprinesite raspravama.</p>
-
-    <form onsubmit="submitComment(event)" class="commentForm">
-      <input type="text" id="commentInput" class="commentInput" placeholder="Napišite svoj komentar">
-      <input type="submit" value="Objavi" class="commentSubmit">
-    </form>
-
-    <div id="forumPosts" class="forumPosts">
-      <!-- Forum posts will be added dynamically -->
+      <form onsubmit="submitComment(event)" class="commentForm">
+        <input type="text" id="commentInput" class="commentInput" placeholder="Write your comment">
+        <input type="submit" class="commentSubmit" value="Submit">
+      </form>
     </div>
   </div>
 
+  <div class="modeSwitch">
+    <label for="darkModeToggle">Dark Mode</label>
+    <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+  </div>
+
   <script>
-    document.addEventListener('DOMContentLoaded', loadForumPosts);
-
-    function loadForumPosts() {
-      const forumPostsDiv = document.getElementById('forumPosts');
-      const savedComments = localStorage.getItem('forumComments');
-      const comments = savedComments ? JSON.parse(savedComments) : [];
-
-      comments.forEach(comment => {
-        const { content, time } = comment;
-        const postDiv = createPostElement(content, time);
-        forumPostsDiv.appendChild(postDiv);
-      });
-    }
-
     function performSearch(event) {
       event.preventDefault();
       const searchQuery = document.getElementById('searchInput').value;
@@ -295,40 +282,11 @@
         return;
       }
 
-      const currentTime = new Date().toLocaleString();
-      const postDiv = createPostElement(comment, currentTime);
-      const forumPostsDiv = document.getElementById('forumPosts');
-      forumPostsDiv.appendChild(postDiv);
-
-      saveComment(comment, currentTime);
+      const commentElement = document.createElement('p');
+      commentElement.textContent = comment;
+      document.querySelector('.forumBox').appendChild(commentElement);
 
       commentInput.value = '';
-    }
-
-    function createPostElement(content, time) {
-      const postDiv = document.createElement('div');
-      postDiv.classList.add('forumPost');
-
-      const contentParagraph = document.createElement('p');
-      contentParagraph.classList.add('forumPostContent');
-      contentParagraph.textContent = content;
-      postDiv.appendChild(contentParagraph);
-
-      const timeParagraph = document.createElement('p');
-      timeParagraph.classList.add('forumPostTime');
-      timeParagraph.textContent = 'Objavljeno ' + time;
-      postDiv.appendChild(timeParagraph);
-
-      return postDiv;
-    }
-
-    function saveComment(content, time) {
-      const savedComments = localStorage.getItem('forumComments');
-      const comments = savedComments ? JSON.parse(savedComments) : [];
-
-      comments.push({ content, time });
-
-      localStorage.setItem('forumComments', JSON.stringify(comments));
     }
 
     function toggleDarkMode() {
