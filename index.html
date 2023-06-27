@@ -3,12 +3,11 @@
 <head>
   <title>Potražite povoljne proizvode</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-
+    /* CSS styles go here */
     body {
-      background-color: #f7f7f7;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f0f0;
       color: #333;
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
     }
@@ -16,193 +15,107 @@
     .container {
       max-width: 600px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 20px;
       background-color: #fff;
-      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      text-align: center;
     }
 
     h1 {
-      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
       color: #333;
-      font-family: 'Poppins', sans-serif;
-      font-size: 32px;
-      margin-top: 0;
     }
 
     .searchForm {
       display: flex;
       justify-content: center;
-      margin-top: 20px;
+      align-items: center;
+      margin-bottom: 20px;
     }
 
     .searchForm input[type="text"] {
+      width: 300px;
       padding: 10px;
-      font-size: 16px;
-      border: none;
-      border-radius: 4px 0 0 4px;
-      background-color: #f2f2f2;
-      color: #333;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      outline: none;
     }
 
     .searchForm input[type="submit"] {
       padding: 10px 20px;
-      font-size: 16px;
-      background-color: #4CAF50;
+      margin-left: 10px;
+      background-color: #4caf50;
       color: #fff;
       border: none;
-      border-radius: 0 4px 4px 0;
+      border-radius: 5px;
       cursor: pointer;
     }
 
     .searchResults {
-      margin-top: 20px;
+      text-align: left;
+      margin-bottom: 20px;
     }
 
     .searchLink {
       display: block;
-      padding: 10px;
-      background-color: #fff;
+      margin-bottom: 10px;
+      font-size: 16px;
       color: #333;
       text-decoration: none;
-      border-radius: 4px;
-      margin-bottom: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .searchLink:hover {
-      background-color: #f2f2f2;
     }
 
     .forumBox {
-      background-color: #f2f2f2;
+      text-align: left;
       padding: 20px;
-      border-radius: 4px;
-      margin-top: 20px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
     }
 
     .forumTitle {
-      font-size: 24px;
-      font-weight: bold;
+      font-size: 20px;
       margin-bottom: 10px;
-    }
-
-    .forumContent {
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
-
-    .commentForm {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .commentInput {
-      flex: 1;
-      padding: 10px;
-      font-size: 14px;
-      border: none;
-      border-radius: 4px 0 0 4px;
-      background-color: #f2f2f2;
       color: #333;
     }
 
-    .commentSubmit {
+    .commentForm input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .commentForm input[type="submit"] {
       padding: 10px 20px;
-      font-size: 14px;
-      background-color: #4CAF50;
+      background-color: #4caf50;
       color: #fff;
       border: none;
-      border-radius: 0 4px 4px 0;
+      border-radius: 5px;
       cursor: pointer;
     }
 
-    .commentSubmit:hover {
-      background-color: #45a049;
-    }
-
     .modeSwitch {
-      text-align: center;
-      margin-top: 20px;
+      text-align: right;
+      margin-bottom: 20px;
     }
 
     .modeSwitch label {
       display: inline-block;
-      margin-right: 10px;
+      margin-right: 5px;
+      font-size: 14px;
+      color: #333;
     }
 
-    /* Dark Mode Styles */
+    .modeSwitch input[type="checkbox"] {
+      transform: scale(1.5);
+    }
+
     .darkMode {
       background-color: #333;
       color: #fff;
-    }
-
-    .darkMode h1 {
-      color: #fff;
-    }
-
-    .darkMode .searchForm input[type="text"],
-    .darkMode .searchForm input[type="submit"],
-    .darkMode .searchLink,
-    .darkMode .forumBox,
-    .darkMode .forumTitle,
-    .darkMode .forumContent,
-    .darkMode .commentInput,
-    .darkMode .commentSubmit {
-      background-color: #444;
-      color: #fff;
-    }
-
-    .darkMode .searchLink:hover {
-      background-color: #555;
-    }
-
-    /* Responsive Styles */
-    @media only screen and (max-width: 480px) {
-      .container {
-        padding: 20px;
-        border-radius: 0;
-      }
-
-      h1 {
-        font-size: 24px;
-      }
-
-      .searchForm {
-        flex-direction: column;
-      }
-
-      .searchForm input[type="text"],
-      .searchForm input[type="submit"] {
-        width: 100%;
-      }
-
-      .searchResults {
-        margin-top: 10px;
-      }
-
-      .forumBox {
-        padding: 10px;
-        margin-top: 10px;
-      }
-
-      .forumTitle {
-        font-size: 20px;
-      }
-
-      .forumContent {
-        font-size: 14px;
-      }
-
-      .commentForm {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .commentInput,
-      .commentSubmit {
-        width: 100%;
-        margin-top: 10px;
-      }
     }
   </style>
 </head>
@@ -210,7 +123,7 @@
   <div class="container">
     <h1>Potražite povoljne proizvode</h1>
     <form onsubmit="performSearch(event)" class="searchForm">
-      <input type="text" id="searchInput" placeholder="Unesite naziv proizvoda" autofocus>
+      <input type="text" id="searchInput" placeholder="Unesite naziv proizvoda" onclick="openKeyboard(this)">
       <input type="submit" value="Pretraži">
     </form>
     <div id="searchResults" class="searchResults"></div>
@@ -220,18 +133,25 @@
       <p class="forumContent">Ovo je odjeljak foruma gdje korisnici mogu raspravljati i dijeliti informacije o povoljnim proizvodima. Slobodno postavite pitanja ili doprinesite raspravama.</p>
 
       <form onsubmit="submitComment(event)" class="commentForm">
-        <input type="text" id="commentInput" class="commentInput" placeholder="Napišite svoj komentar" autofocus>
+        <input type="text" id="commentInput" class="commentInput" placeholder="Napišite svoj komentar" onclick="openKeyboard(this)">
         <input type="submit" class="commentSubmit" value="Objavi">
       </form>
     </div>
-  </div>
 
-  <div class="modeSwitch">
-    <label for="darkModeToggle">Tamni način</label>
-    <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+    <div class="modeSwitch">
+      <label for="darkModeToggle">Tamni način</label>
+      <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+    </div>
   </div>
 
   <script>
+    /* JavaScript code goes here */
+    function openKeyboard(inputElement) {
+      setTimeout(function () {
+        inputElement.focus();
+      }, 200);
+    }
+
     function performSearch(event) {
       event.preventDefault();
       const searchQuery = document.getElementById('searchInput').value;
