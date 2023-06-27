@@ -119,20 +119,6 @@
       cursor: pointer;
     }
 
-    .commentSubmit:hover {
-      background-color: #45a049;
-    }
-
-    .modeSwitch {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .modeSwitch label {
-      display: inline-block;
-      margin-right: 10px;
-    }
-
     /* Dark Mode Styles */
     .darkMode {
       background-color: #333;
@@ -143,31 +129,15 @@
       color: #fff;
     }
 
-    .darkMode .searchForm input[type="text"] {
-      background-color: #444;
-      color: #fff;
-    }
-
-    .darkMode .searchForm input[type="submit"] {
-      background-color: #4CAF50;
-      color: #fff;
-    }
-
-    .darkMode .searchLink {
-      background-color: #444;
-      color: #fff;
-    }
-
-    .darkMode .searchLink:hover {
-      background-color: #555;
-    }
-
-    .darkMode .forumBox {
-      background-color: #555;
-    }
-
+    .darkMode .searchForm input[type="text"],
+    .darkMode .searchForm input[type="submit"],
+    .darkMode .searchLink,
+    .darkMode .forumBox,
     .darkMode .forumTitle,
-    .darkMode .forumContent {
+    .darkMode .forumContent,
+    .darkMode .commentInput,
+    .darkMode .commentSubmit {
+      background-color: #444;
       color: #fff;
     }
 
@@ -224,7 +194,7 @@
 </head>
 <body>
   <div class="container">
-    <h1 style="font-family: 'Poppins', sans-serif;">Potražite povoljne proizvode</h1>
+    <h1>Potražite povoljne proizvode</h1>
     <form onsubmit="performSearch(event)" class="searchForm">
       <input type="text" id="searchInput" placeholder="Unesite naziv proizvoda" autocomplete="off">
       <input type="submit" value="Pretraži">
@@ -239,6 +209,8 @@
         <input type="text" id="commentInput" class="commentInput" placeholder="Napišite svoj komentar" autocomplete="off">
         <input type="submit" class="commentSubmit" value="Pošalji">
       </form>
+
+      <div id="commentsSection"></div>
     </div>
   </div>
 
@@ -288,7 +260,7 @@
 
       const commentElement = document.createElement('p');
       commentElement.textContent = comment;
-      document.querySelector('.forumBox').appendChild(commentElement);
+      document.getElementById('commentsSection').appendChild(commentElement);
 
       commentInput.value = '';
     }
