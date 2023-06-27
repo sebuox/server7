@@ -1,186 +1,339 @@
-
 <!DOCTYPE html>
-<link rel="icon" type="image/png" href="music-player.png"
 <html>
-<title>Music & Lyrics</title>
+<head>
+  <title>Proizvodi na internetu!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-h1 {
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
-opacity: .6;
- }
-</style>
-<h1 font-family: "Comic Sans MS", "Comic Sans", cursive; style="background-color:DodgerBlue;">Music&Lyrics &#9752;</h1>
-<p style="color:white;">Free ovpn conf file</p>
-<a href="server76.ovpn" download>
-   <button type="submit">Download</button>
-</a>
-<br>
-<h1 style="color:white;">RSS Feed &#9732;</h1><i style="font-size:24px;"></i> 
- <!-- start sw-rss-feed code --> 
-<script type="text/javascript"> 
-<!-- 
-rssfeed_url = new Array(); 
-rssfeed_url[0]="https://feeds.feedburner.com/youtube/kfRE7OaLxMv.xml"; rssfeed_url[1]="https://feeds.feedburner.com/metalinjection.xml"; rssfeed_url[2]="https://feeds.feedburner.com/therazorsedge/ei48gs5HdQ6.xml"; rssfeed_url[3]="https://feeds.feedburner.com/metalunderground.xml";  
-rssfeed_frame_width="430"; 
-rssfeed_frame_height="463"; 
-rssfeed_scroll="on"; 
-rssfeed_scroll_step="6"; 
-rssfeed_scroll_bar="on"; 
-rssfeed_target="_blank"; 
-rssfeed_font_size="24"; 
-rssfeed_font_face=""; 
-rssfeed_border="on"; 
-rssfeed_css_url="https://feed.surfing-waves.com/css/style5.css"; 
-rssfeed_title="on"; 
-rssfeed_title_name=""; 
-rssfeed_title_bgcolor="#3366ff"; 
-rssfeed_title_color="#fff"; 
-rssfeed_title_bgimage=""; 
-rssfeed_footer="on"; 
-rssfeed_footer_name="rss feed"; 
-rssfeed_footer_bgcolor="#fff"; 
-rssfeed_footer_color="#333"; 
-rssfeed_footer_bgimage=""; 
-rssfeed_item_title_length="50"; 
-rssfeed_item_title_color="#666"; 
-rssfeed_item_bgcolor="#fff"; 
-rssfeed_item_bgimage=""; 
-rssfeed_item_border_bottom="on"; 
-rssfeed_item_source_icon="on"; 
-rssfeed_item_date="off"; 
-rssfeed_item_description="on"; 
-rssfeed_item_description_length="120"; 
-rssfeed_item_description_color="#666"; 
-rssfeed_item_description_link_color="#333"; 
-rssfeed_item_description_tag="off"; 
-rssfeed_no_items="0"; 
-rssfeed_cache = "5eb6059eeb928cdb867cbc365c2200ee"; 
-//--> 
-</script> 
-<script type="text/javascript" src="//feed.surfing-waves.com/js/rss-feed.js"></script> 
-<!-- The link below helps keep this service FREE, and helps other people find the SW widget. Please be cool and keep it! Thanks. --> 
-<!--<div style="color:#ccc;font-size:10px; text-align:right; width:430px;">powered by <a href="https://surfing-waves.com" rel="noopener" target="_blank" style="color:#ccc;">Surfing Waves</a></div> 
-<!-- end sw-rss-feed code -->
-  <iframe width="560" height="460" src="https://www.youtube.com/embed/Va-h6WZPUzQ?autoplay=1" allow='autoplay'></iframe>
-  <script>
-        (function(d, s, id) {
-            if (d.getElementById(id)) {
-                if (window.__TOMORROW__) {
-                    window.__TOMORROW__.renderWidget();
-                }
-                return;
-            }
-            const fjs = d.getElementsByTagName(s)[0];
-            const js = d.createElement(s);
-            js.id = id;
-            js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        })(document, 'script', 'tomorrow-sdk');
-        </script>
-        <div class="tomorrow"
-           data-location-id=""
-           data-language="EN"
-           data-unit-system="METRIC"
-           data-skin="dark"
-           data-widget-type="upcoming"
-           style="padding-bottom:22px;position:relative;">
-          <a
-            href="https://www.tomorrow.io/weather-api/"
-            rel="nofollow noopener noreferrer"
-            target="_blank"
-            style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;">
-           <!-- <img
-              alt="Powered by the Tomorrow.io Weather API"
-              src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
-              width="250"
-              height="18"
-          
-          />
-//-->          
-</a>
-  </div>   
-<h1 style="color:white;">Find yaself down below &#8681;</h1><i style="font-size:24px;"></i> 
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d69091423.11906475!2d17.997694798931175!3d32.3630203240671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2suk!4v1680887849437!5m2!1sen!2suk" width="600" height="460" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-<script src="https://minnit.chat/js/embed.js" defer></script><minnit-chat data-chatname="https://organizations.minnit.chat/243791466832078/Main?embed&nickname=" data-style="width:430px;height:460px;"></minnit-chat><style>
-   div
-   {
-     display: inline-block;
-   }
-  
-</style>
- <br><br>
- <style type="text/css">
-    h2 {
-        text-align: center;
-        font-size: 50px;
+    body {
+      background-color: #f7f7f7;
+      color: #333;
+      font-family: Arial, sans-serif;
     }
-    img#getImage {
-        width: 560px;
-        height: auto;
-        border: 4px solid #a1a1a1;
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background-color: #fff;
+      border-radius: 8px;
     }
-    div {
-    text-align: center;
+
+    h1 {
+      text-align: center;
+      color: #333;
+      font-family: 'Poppins', sans-serif;
+      font-size: 32px;
+      margin-top: 0;
     }
-</style>
-</head>
-<h1 style="color:white;">Magic &#9827; ClickTap Cards</h1><i style="font-size:24px;"></i> 
-  <body>
-    <div id="player">
-    </div>
 
-    <script>
-      class ClickListener {
-        constructor() {
-          this.rootElement = document.querySelector( "#player" );
-          this.element = document.createElement("img");
-          this.rootElement.appendChild(this.element);
-          this.images = ['coperfild1.png', './coperfild2.png', 'coperfild3.png']
-          this.idx = 0
-          this.init()
-        }
+    .searchForm {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
 
-        init() {
-          this.element.src = this.images[this.idx]
-          this.element.style.width = `auto`;
-          this.element.style.height = `560px`;
-          this.element.onclick = this.nextImage.bind(this)
-        }
+    .searchForm input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      background-color: #f2f2f2;
+      color: #333;
+      width: 100%;
+      max-width: 300px;
+      box-sizing: border-box;
+    }
 
-        nextImage() {
-          this.idx++;
-          if(this.idx >= this.images.length) {
-            this.idx = 0;
-          }
-          this.element.src = this.images[this.idx]
-        }
+    .searchForm input[type="submit"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      width: 100%;
+      max-width: 300px;
+      box-sizing: border-box;
+      margin-top: 10px;
+    }
 
+    .searchResults {
+      margin-top: 20px;
+    }
+
+    .searchLink {
+      display: block;
+      padding: 10px;
+      background-color: #fff;
+      color: #333;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .searchLink:hover {
+      background-color: #f2f2f2;
+    }
+
+    .forumBox {
+      background-color: #f2f2f2;
+      padding: 20px;
+      border-radius: 4px;
+      margin-top: 20px;
+    }
+
+    .forumTitle {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .forumContent {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .commentForm {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .commentInput {
+      flex: 1;
+      padding: 10px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      background-color: #f2f2f2;
+      color: #333;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    .commentSubmit {
+      padding: 10px 20px;
+      font-size: 14px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    .forumPosts {
+      margin-top: 20px;
+    }
+
+    .forumPost {
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .forumPostContent {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .forumPostTime {
+      font-size: 12px;
+      color: #999;
+    }
+
+    .modeSwitch {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .modeSwitch label {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    /* Dark Mode Styles */
+    .darkMode {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .darkMode h1,
+    .darkMode .forumTitle {
+      color: #fff;
+    }
+
+    .darkMode .searchForm input[type="text"],
+    .darkMode .commentInput {
+      background-color: #444;
+      color: #fff;
+    }
+
+    .darkMode .searchForm input[type="submit"],
+    .darkMode .commentSubmit {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+    .darkMode .searchLink,
+    .darkMode .forumPost {
+      background-color: #555;
+      color: #fff;
+    }
+
+    .darkMode .searchLink:hover {
+      background-color: #666;
+    }
+
+    .darkMode .forumBox {
+      background-color: #555;
+    }
+
+    .darkMode .forumContent,
+    .darkMode .forumPostContent,
+    .darkMode .forumPostTime {
+      color: #fff;
+    }
+
+    @media only screen and (max-width: 600px) {
+      h1 {
+        font-size: 24px;
       }
-      new ClickListener()
-    </script>
-  </body>
 
- 
- 
-<body>
-   <h1 style="color:white;">Music &#9835;</h1>
-  <iframe width="560" height="352" src="https://www.youtube.com/embed/videoseries?list=PL4royKB7U7zcHWw1orMKO5l6jtZXRAuhJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/52ZN8WDvvxDP8y9jTZyeTI?utm_source=generator&theme=0" width="560" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  <h1 style="color:white;">Games &#9816;</h1>
- <div><script src="https://cdn.htmlgames.com/embed.js?game=Chess&amp;bgcolor=white"></script></div>
- <div><script src="https://cdn.htmlgames.com/embed.js?game=TicTacToe&amp;bgcolor=white"></script></div>
- <div><script src="https://cdn.htmlgames.com/embed.js?game=ClassicPac&amp;bgcolor=white"></script></div>
- <div><script src="https://cdn.htmlgames.com/embed.js?game=OuterSpaceArkanoid&amp;bgcolor=white"></script></div>
-</body>
-<style>
-body {
-  background-image: url('car.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+      .searchForm input[type="text"],
+      .searchForm input[type="submit"],
+      .commentInput,
+      .commentSubmit {
+        max-width: 100%;
+      }
     }
-</syle>
-  </html>
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pronađite najveće popuste i najjeftinije proizvode na internetu!</h1>
+    <form onsubmit="performSearch(event)" class="searchForm">
+      <input type="text" id="searchInput" placeholder="Unesite naziv proizvoda">
+      <input type="submit" value="Pretraži">
+    </form>
+    <div id="searchResults" class="searchResults"></div>
+  </div>
 
+  <div class="modeSwitch">
+    <label for="darkModeToggle">Tamni način</label>
+    <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+  </div>
 
+  <div class="container forumBox">
+    <h2 class="forumTitle">Forum</h2>
+    <p class="forumContent">Ovo je forum gdje korisnici mogu raspravljati i dijeliti informacije o jeftinim proizvodima. Slobodno postavite pitanja ili doprinesite raspravi.</p>
+    <form onsubmit="submitComment(event)" class="commentForm">
+      <input type="text" id="commentInput" placeholder="Napišite svoj komentar" class="commentInput">
+      <input type="submit" value="Objavi" class="commentSubmit">
+    </form>
+    <div id="forumPosts" class="forumPosts"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedComments = localStorage.getItem('forumComments');
+      const comments = savedComments ? JSON.parse(savedComments) : [];
+      const forumPostsDiv = document.getElementById('forumPosts');
+
+      comments.forEach(function(comment) {
+        const { content, time } = comment;
+        const postDiv = createPostElement(content, time);
+        forumPostsDiv.appendChild(postDiv);
+      });
+    });
+
+    function performSearch(event) {
+      event.preventDefault();
+      const searchQuery = document.getElementById('searchInput').value;
+      const googleSearchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(searchQuery) + ' online dučan najpovoljnija cijena';
+      const bingSearchUrl = 'https://www.bing.com/search?q=' + encodeURIComponent(searchQuery) + ' online dučan najpovoljnija cijena';
+      const duckDuckGoSearchUrl = 'https://duckduckgo.com/?q=' + encodeURIComponent(searchQuery) + ' online dučan najpovoljnija cijena';
+
+      const searchResultsDiv = document.getElementById('searchResults');
+      searchResultsDiv.innerHTML = '';
+
+      const googleLink = createSearchLink('Google', googleSearchUrl);
+      searchResultsDiv.appendChild(googleLink);
+
+      const bingLink = createSearchLink('Bing', bingSearchUrl);
+      searchResultsDiv.appendChild(bingLink);
+
+      const duckDuckGoLink = createSearchLink('DuckDuckGo', duckDuckGoSearchUrl);
+      searchResultsDiv.appendChild(duckDuckGoLink);
+    }
+
+    function createSearchLink(engineName, searchUrl) {
+      const link = document.createElement('a');
+      link.href = searchUrl;
+      link.target = '_blank';
+      link.textContent = 'Pretraži na ' + engineName;
+      link.classList.add('searchLink');
+      return link;
+    }
+
+    function submitComment(event) {
+      event.preventDefault();
+      const commentInput = document.getElementById('commentInput');
+      const comment = commentInput.value;
+
+      if (comment.trim() === '') {
+        return;
+      }
+
+      const currentTime = new Date().toLocaleString();
+      const postDiv = createPostElement(comment, currentTime);
+      forumPostsDiv.appendChild(postDiv);
+
+      saveComment(comment, currentTime);
+
+      commentInput.value = '';
+    }
+
+    function createPostElement(content, time) {
+      const postDiv = document.createElement('div');
+      postDiv.classList.add('forumPost');
+
+      const contentParagraph = document.createElement('p');
+      contentParagraph.classList.add('forumPostContent');
+      contentParagraph.textContent = content;
+      postDiv.appendChild(contentParagraph);
+
+      const timeParagraph = document.createElement('p');
+      timeParagraph.classList.add('forumPostTime');
+      timeParagraph.textContent = 'Objavljeno ' + time;
+      postDiv.appendChild(timeParagraph);
+
+      return postDiv;
+    }
+
+    function saveComment(content, time) {
+      const savedComments = localStorage.getItem('forumComments');
+      const comments = savedComments ? JSON.parse(savedComments) : [];
+
+      comments.push({ content, time });
+
+      localStorage.setItem('forumComments', JSON.stringify(comments));
+    }
+
+    function toggleDarkMode() {
+      const body = document.body;
+      const container = document.querySelector('.container');
+
+      body.classList.toggle('darkMode');
+      container.classList.toggle('darkMode');
+    }
+  </script>
+</body>
+</html>
