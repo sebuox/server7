@@ -35,7 +35,7 @@
       margin-bottom: 20px;
     }
 
-    .searchForm input[type="text"] {
+    .searchForm input[type="search"] {
       width: 300px;
       padding: 10px;
       border-radius: 5px;
@@ -123,7 +123,7 @@
   <div class="container">
     <h1>Potražite povoljne proizvode</h1>
     <form onsubmit="performSearch(event)" class="searchForm">
-      <input type="text" id="searchInput" placeholder="Unesite naziv proizvoda" onclick="openKeyboard(this)">
+      <input type="search" id="searchInput" placeholder="Unesite naziv proizvoda" onclick="openKeyboard(this)">
       <input type="submit" value="Pretraži">
     </form>
     <div id="searchResults" class="searchResults"></div>
