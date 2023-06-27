@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Potražite povoljne proizvode</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
@@ -43,7 +44,6 @@
       background-color: #f2f2f2;
       color: #333;
       flex: 1;
-      min-width: 0;
     }
 
     .searchForm input[type="submit"] {
@@ -96,6 +96,7 @@
     .commentForm {
       display: flex;
       justify-content: space-between;
+      margin-top: 20px;
     }
 
     .commentInput {
@@ -106,7 +107,6 @@
       border-radius: 4px 0 0 4px;
       background-color: #f2f2f2;
       color: #333;
-      min-width: 0;
     }
 
     .commentSubmit {
@@ -211,6 +211,7 @@
       .commentForm {
         flex-direction: column;
         align-items: stretch;
+        margin-top: 10px;
       }
 
       .commentInput,
@@ -225,7 +226,7 @@
   <div class="container">
     <h1 style="font-family: 'Poppins', sans-serif;">Potražite povoljne proizvode</h1>
     <form onsubmit="performSearch(event)" class="searchForm">
-      <input type="text" id="searchInput" placeholder="Unesite naziv proizvoda" autofocus>
+      <input type="text" id="searchInput" placeholder="Unesite naziv proizvoda" autocomplete="off">
       <input type="submit" value="Pretraži">
     </form>
     <div id="searchResults" class="searchResults"></div>
@@ -235,7 +236,7 @@
       <p class="forumContent">This is the forum section where users can discuss and share information about cheap products. Feel free to ask questions or contribute to the discussions.</p>
 
       <form onsubmit="submitComment(event)" class="commentForm">
-        <input type="text" id="commentInput" class="commentInput" placeholder="Write your comment">
+        <input type="text" id="commentInput" class="commentInput" placeholder="Write your comment" autocomplete="off">
         <input type="submit" class="commentSubmit" value="Submit">
       </form>
     </div>
