@@ -140,32 +140,20 @@
       color: #fff;
     }
 
-    .darkMode .searchForm input[type="text"] {
-      background-color: #444;
-      color: #fff;
-    }
-
-    .darkMode .searchForm input[type="submit"] {
-      background-color: #4CAF50;
-      color: #fff;
-    }
-
-    .darkMode .searchLink {
+    .darkMode .searchForm input[type="text"],
+    .darkMode .searchForm input[type="submit"],
+    .darkMode .searchLink,
+    .darkMode .forumBox,
+    .darkMode .forumTitle,
+    .darkMode .forumContent,
+    .darkMode .commentInput,
+    .darkMode .commentSubmit {
       background-color: #444;
       color: #fff;
     }
 
     .darkMode .searchLink:hover {
       background-color: #555;
-    }
-
-    .darkMode .forumBox {
-      background-color: #555;
-    }
-
-    .darkMode .forumTitle,
-    .darkMode .forumContent {
-      color: #fff;
     }
 
     /* Responsive Styles */
@@ -220,26 +208,26 @@
 </head>
 <body>
   <div class="container">
-    <h1 style="font-family: 'Poppins', sans-serif;">Potražite povoljne proizvode</h1>
+    <h1>Potražite povoljne proizvode</h1>
     <form onsubmit="performSearch(event)" class="searchForm">
-      <input type="text" id="searchInput" placeholder="Unesite naziv proizvoda">
+      <input type="text" id="searchInput" placeholder="Unesite naziv proizvoda" autofocus>
       <input type="submit" value="Pretraži">
     </form>
     <div id="searchResults" class="searchResults"></div>
 
     <div class="forumBox">
       <h2 class="forumTitle">Forum</h2>
-      <p class="forumContent">This is the forum section where users can discuss and share information about cheap products. Feel free to ask questions or contribute to the discussions.</p>
+      <p class="forumContent">Ovo je odjeljak foruma gdje korisnici mogu raspravljati i dijeliti informacije o povoljnim proizvodima. Slobodno postavite pitanja ili doprinesite raspravama.</p>
 
       <form onsubmit="submitComment(event)" class="commentForm">
-        <input type="text" id="commentInput" class="commentInput" placeholder="Write your comment">
-        <input type="submit" class="commentSubmit" value="Submit">
+        <input type="text" id="commentInput" class="commentInput" placeholder="Napišite svoj komentar" autofocus>
+        <input type="submit" class="commentSubmit" value="Objavi">
       </form>
     </div>
   </div>
 
   <div class="modeSwitch">
-    <label for="darkModeToggle">Dark Mode</label>
+    <label for="darkModeToggle">Tamni način</label>
     <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
   </div>
 
